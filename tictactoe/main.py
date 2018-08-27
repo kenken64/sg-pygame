@@ -1,9 +1,5 @@
 #!/usr/bin/python
 
-# Tic-Tac-Toe
-# pyGame Demo
-# Nathan R. Yergler
-# 13 May 2002
 
 # import necessary modules
 import pygame

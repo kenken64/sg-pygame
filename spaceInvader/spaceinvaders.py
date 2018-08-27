@@ -1,5 +1,4 @@
 # Space Invaders
-# Created by Lee Robinson
 
 #!/usr/bin/env python
 from pygame import *

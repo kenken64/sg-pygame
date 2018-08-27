@@ -1,4 +1,3 @@
-__author__ = 'justinarmstrong'
 
 from . import setup,tools
 from .states import main_menu,load_screen,level1
