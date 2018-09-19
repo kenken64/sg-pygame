@@ -71,9 +71,9 @@ def get_words():
 def choose_difficulty():
     difficulty = ""
     difficulties = ["easy", "medium", "hard"]
-    print difficulties
+    print(difficulties)
     while difficulty not in difficulties:
-        difficulty = raw_input("Choose your difficulty: ")
+        difficulty = input("Choose your difficulty: ")
     return difficulty
 
 def create_wordlist(difficulty="easy"):
@@ -99,16 +99,16 @@ def update_guessed_word(guess, word, guessed_word):
 
 def check_endstate(mistakes, word, guessed_word):
     if word == guessed_word:
-        print "\nYou've correctly guessed '{}'.".format(word)
-        print "Congrats! You've won!"
-        print "-"*10
+        print("\nYou've correctly guessed '{}'.".format(word))
+        print("Congrats! You've won!")
+        print("-"*10)
     else:
-        print gallows[mistakes]
-        print "\nThe word was '{}'\nYou guessed  '{}'.".format(word,
-                                                              guessed_word)
-        print "Sorry mate, you've lost."
-        print "-"*10
-    print "\nNew Game!"
+        print(gallows[mistakes])
+        print("\nThe word was '{}'\nYou guessed  '{}'.".format(word,
+                                                              guessed_word))
+        print("Sorry mate, you've lost.")
+        print("-"*10)
+    print("\nNew Game!")
 
 
 def main():
@@ -129,14 +129,14 @@ def main():
         # Main loop.
         while word != guessed_word and mistakes < 6:
             # Add spaces when displaying the words to see the length.
-            print gallows[mistakes]
-            print "missed:\t{}".format(" ".join(sorted(wrong_guesses)))
-            print "word:\t{}".format(" ".join(guessed_word))
+            print(gallows[mistakes])
+            print("missed:\t{}".format(" ".join(sorted(wrong_guesses))))
+            print("word:\t{}".format(" ".join(guessed_word)))
 
             # Guess until we have a unique lowercase string character.
             guess = ""
             while len(guess) != 1 or guess in guesses or not guess.islower():
-                guess = raw_input("guess:\t")
+                guess = input("guess:\t")
 
             if guess not in word:
                 mistakes += 1
@@ -152,7 +152,7 @@ def main():
 
 
 if __name__ == "__main__":
-    print "\nWelcome to Hangman!"
-    print "Guess the word before the man is hung and you win!"
-    raw_input("\n\t---Enter to Continue---\n")
+    print("\nWelcome to Hangman!")
+    print("Guess the word before the man is hung and you win!")
+    input("\n\t---Enter to Continue---\n")
     main()
